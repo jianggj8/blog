@@ -1,7 +1,7 @@
 title: 杂货铺   # your title
 author: jianggj # your name
 description: Just have some fun here # your description
-avatar: /images/my.jpg # change avatar
+avatar: ./images/my.jpg # change avatar
 
 # Build Settings
 markdown: kramdown
