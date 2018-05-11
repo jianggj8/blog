@@ -1,7 +1,7 @@
 # jianggj
 
 A simple two-column jekyll theme delicated to wrting.
-
+From network
 
 ## Preview
 
