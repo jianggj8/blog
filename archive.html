@@ -16,7 +16,7 @@ active: archive
         {% for post in year.items %}
           <li class="listing_item">
             <span class="date">{{ post.date | date: "%F" }}</span>
-            <a href="{{ post.url }}">{{ post.title }}</a>
+            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
           </li>
         {% endfor %}
       </ul>
