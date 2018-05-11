@@ -1,4 +1,4 @@
-# Xian
+# jianggj
 
 A simple two-column jekyll theme delicated to wrting.
 
@@ -9,7 +9,7 @@ A simple two-column jekyll theme delicated to wrting.
 ![](/images/desktop.png)
 
 #### Mobile
-![](/images/mobile.png)
+![](https://i.loli.net/2018/05/11/5af5442510981.jpg)
 
 ## Features
 
@@ -31,8 +31,8 @@ Similar process with detailed page with gif can be seen [here](https://github.co
 In `_config.yml` file
 
 ```
-title: Xian   # your title
-author: Xian # your name
+title: xxxx   # your title
+author: xxxx # your name
 description: Just have some fun here # your description
 avatar: /images/avatar.png # change avatar
 
