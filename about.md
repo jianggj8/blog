@@ -5,9 +5,10 @@ active: about
 ---
 
 
-This is a simple two-column [jekyll](https://jekyllrb.com/) theme delicated to wrting.
+  + [√] 男
+  + [√] 大龄(?)
+  + [√] 爱折腾
+    - 小打小闹无伤大雅，百无聊赖智慧人生
 
-You can get to know more about this theme [here]().
-
-
-Theme inspire by [Farbtle](https://github.com/YCF/Farbtle), I steal most CSS from him.
+![我们不一样](https://i.loli.net/2018/05/11/5af5442510981.jpg)
+ 
