@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post 
 title: 三字经
 ---
 <h2>{{ page.title }}</h2>
