@@ -1,0 +1,184 @@
+---
+layout: post 
+---
+<blockquote>
+<p>markdown 这个词的来源难道是为了对应编写网页所用HTML（超文本标记语言，Hyper Text Markup Language）中的markup？<sup>_</sup></p>
+</blockquote>
+<h2>markdown 是什么？</h2>
+<p>同样是标记语言，但它相比HTML更加简单！一是体现在标记符的<strong>数量</strong>上，二是体现在标记符的<strong>书写</strong>上。HTML标记符号非常多，并且需要标记内容的开始和结束位置，而markdown只有四个基本的标记符号，只要在开始位置标记即可。</p>
+<h2>markdown 解决什么问题？</h2>
+<p>当我们需要让文档看起来层次分明，但又不依赖于word这样的编辑工具来书写、排版和读取时，markdown的<strong>易写易读</strong>优势就非常突出了。并且在我使用一段时间以后，发现使用markdown非常有助于帮助作者在写作时整理自己的逻辑思路和段落层次。</p>
+<h2>怎样书写和读取 markdown？</h2>
+<p>同HTML一样，你可以使用任何一款纯文本编辑工具来编辑和读取包含markdown格式的文本，但只有在一些特别的工具（如有道云笔记）或网站（如简书）下，才能呈现出渲染后的格式。同时markdown也可以使用HTML来添加格式和排版，这意味着，你即可以使用标准的markdown语法，也可以在其中嵌入HTML标记，但也只能对应其中的一小部分。</p>
+<h2>markdown 的语法</h2>
+<p>真的非常简单！<br>
+<strong>基本符号</strong>：<code>* - + &gt;</code><br>
+基本上所有的markdown标记都是基于这四个符号及其组合，需要注意的是，如果以基本符号开头的标记，注意基本符号后分割内容的<strong>空格</strong>。</p>
+<ul>
+<li>
+<h3>标题</h3>
+<ul>
+<li>
+<h1>一级标题 <code># 一级标题</code>
+</h1>
+</li>
+<li>
+<h2>二级标题 <code>## 二级标题</code>
+</h2>
+</li>
+<li>
+<h3>三级标题 <code>### 三级标题</code>
+</h3>
+</li>
+<li>
+<h4>四级标题 <code>#### 四级标题</code>
+</h4>
+</li>
+<li>
+<h5>五级标题 <code>##### 五级标题</code>
+</h5>
+</li>
+<li>
+<h6>六级标题 <code>###### 六级标题</code>
+</h6>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>
+<h3>引用</h3>
+</li>
+</ul>
+<blockquote>
+<p>引用的方式：<code>&gt; 引用内容</code></p>
+</blockquote>
+<ul>
+<li>
+<h3>段落</h3>
+<ul>
+<li>段落以自然 <strong>回车</strong> 作为标记。</li>
+</ul>
+</li>
+<li>
+<h3>分隔符</h3>
+<ul>
+<li>连续输入三个以上的<code>---</code>添加横线分隔符，如下：</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<h3>列表</h3>
+<ul>
+<li>使用<code>* - +</code>中的任何一个符号加空格就可以创建无序列表，但如我这样的完美主义者可以进一步使用<code>+ -</code>来表现层次关系。</li>
+<li>使用<code>数字+点+空格</code>创建有序列表</li>
+<li>列表可以嵌套，使用时在嵌套列表前空格，这篇文章的列表使用了嵌套列表。</li>
+</ul>
+</li>
+</ul>
+<pre><code>* 这是一个无序列表
+* 这是一个无序列表
+</code></pre>
+<pre><code>+ 这是一个父无序列表
+  - 这是一个子无序列表
+</code></pre>
+<pre><code>1. 这是一个有序列表`
+2. 这是一个有序列表`
+</code></pre>
+<ul>
+<li>
+<h3>链接</h3>
+<ul>
+<li>
+<a href="https://www.jianshu.com/p/de9c98bba332" target="_blank">用markdown写下你的第一个md文档</a> 的文章链接是这样构成的</li>
+</ul>
+</li>
+</ul>
+<pre><code>[用markdown写下你的第一个md文档](http://www.jianshu.com/p/de9c98bba332) 
+</code></pre>
+<ul>
+<li><p>也可以直接用尖括号包含网址的方式<code>&lt;http://www.jianshu.com&gt;</code>来构成链接 <a href="https://www.jianshu.com" target="_blank">http://www.jianshu.com</a></p></li>
+<li>
+<h3>图片</h3>
+<ul>
+<li>像构造一个链接一样，只需要在前面加！</li>
+</ul>
+</li>
+</ul>
+<pre><code>![图片名称](图片地址)
+</code></pre>
+
+<ul>
+<li>也可以使用html方式来指定图片大小</li>
+</ul>
+<pre><code>&lt;img src="http://upload-images.jianshu.io/upload_images/95646-5bfd0cecf587c766.png" width="300px" height="240px" alt="简书"&gt;
+</code></pre>
+<p>&lt;img src="http://upload-images.jianshu.io/upload_images/95646-5bfd0cecf587c766.png" width="300px" height="240px" alt="简书"&gt;</p>
+<ul>
+<li>
+<h3>代码段</h3>
+</li>
+</ul>
+<p>使用<br>
+```<br>
+代码<br>
+```<br>
+这样的方式来构建<br>
+` 符号在左上角esc键下方，请在半角状态输入</p>
+<pre><code>print("这是一个代码段");
+</code></pre>
+<ul>
+<li>
+<h3>字体样式</h3>
+<ul>
+<li>
+<em>倾斜</em> <code>*倾斜*</code>
+</li>
+<li>
+<strong>加粗</strong> <code>**加粗**</code>
+</li>
+<li>
+<strong><em>倾斜并加粗</em></strong> <code>***倾斜并加粗***</code>
+</li>
+</ul>
+</li>
+<li>
+<h3>表格</h3>
+<ul>
+<li>使用<code>- |</code>符号把内容分割为你认为合适的表格样式就好。</li>
+<li>使用<code>:</code>符号标识对齐。</li>
+</ul>
+</li>
+</ul>
+<pre><code>表头1|表头2|表头3
+:----|:-----:|-----:
+左对齐|居中对齐|右对齐
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">表头1</th>
+<th style="text-align:center">表头2</th>
+<th style="text-align:right">表头3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:center">居中对齐</td>
+<td style="text-align:right">右对齐</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<h3>保存</h3>
+<ul>
+<li>最后将markdown编写的文档存为 <strong>.md</strong> 格式，就可以用对应的工具查看效果和编辑了。</li>
+</ul>
+</li>
+</ul>
+
+<p>{{ page.date | date_to_string }}</p>
