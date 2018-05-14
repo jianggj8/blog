@@ -11,7 +11,7 @@ highlighter: rouge
 paginate: 5
 paginate_path: "/page:num/"
 gems: [jekyll-paginate]
-
+baseurl: /blog
 # Comments
 # disqus:
 #   shortname: xxxx-xxxxx-xxx   # your disqus shortname
