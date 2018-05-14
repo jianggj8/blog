@@ -1,0 +1,104 @@
+@CHARSET "UTF-8";
+
+/*
+zhuyin -> zy
++------------------------+
+| rén      zhī     chū   | zy-pinyin
++------------------------+
+| 人                  之                 初           | zy-hanzi
++------------------------+
+*/
+.zy-hanzi td,.zy-pinyin td {
+	margin: 0;
+	padding: 0;
+	width: 3em;
+	line-height: normal;
+	text-align: center;
+}
+
+.zy-pinyin td {
+	padding-top: 0.5em;
+	font-family: times new roman, times, serif;
+	color: #666;
+}
+
+.zy-hanzi td {
+	font-family: "楷体_GB2312";
+	font-weight: bold;
+	color: #A52A2A;
+}
+
+.zy-hanzi .zy-fenge,.zy-pinyin .zy-fenge {
+	width: 0.5em;
+	color: #666;
+}
+
+.zy-shuming {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+.zy-content, .zy-zhangjieming {
+	margin-top: 1em;
+	border-collapse: separate;
+	border-spacing: 2px;
+}
+
+.zy-zhangjieming {
+	background-image: url("./../img/title-1.small.png");
+	background-repeat: no-repeat;
+}
+
+@media (min-width: 35em) {
+	.zy-hanzi td,.zy-pinyin td {
+		width: 2em;
+	}
+	.zy-hanzi td {
+		font-size: 3em;
+	}
+	.zy-pinyin td {
+		font-size: 1em;
+	}
+	.zy-zhangjieming {
+		background-image: url("./../img/title-1.png");
+		background-repeat: no-repeat;
+	}
+}
+
+@media (min-width: 48em) {
+	.zy-hanzi td,.zy-pinyin td {
+		width: 2em;
+	}
+	.zy-hanzi td {
+		font-size: 3em;
+	}
+	.zy-pinyin td {
+		font-size: 1em;
+	}
+	.zy-zhangjieming {
+		background-image: url("./../img/title-1.png");
+		background-repeat: no-repeat;
+	}
+}
+
+@media print {
+	.header .menu, .footer{
+		display: none;
+	}
+	.zy-hanzi td,.zy-pinyin td {
+	}
+	.zy-hanzi td {
+		font-size: 2.5em;
+		font-weight: bold;
+	}
+	.zy-pinyin td {
+		font-size: 1em;
+	}
+	.zy-hanzi .zy-fenge,.zy-pinyin .zy-fenge {
+		width: 0.5em;
+	}
+	.zy-zhangjieming {
+		background-image: url("./../img/title-1.png");
+		background-repeat: no-repeat;
+	}
+}
