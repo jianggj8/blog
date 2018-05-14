@@ -1,7 +1,7 @@
 title: 小男孩   # your title
 author: jianggj # your name
 description: 物竞天择，适者生存 # your description
-avatar: /images/my.jpg # change avatar
+avatar: /blog/images/my.jpg # change avatar
 
 # Build Settings
 markdown: kramdown
