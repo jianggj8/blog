@@ -19,6 +19,7 @@ active: index
   {% endfor %}
 </div>
 
+
 <!-- Pagination links -->
 <div class="pager">
   {% if paginator.previous_page %}
@@ -27,4 +28,15 @@ active: index
   {% if paginator.next_page %}
     <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="next">Next</a>
   {% endif %}
+</div>
+
+
+<div class="posts">
+  {% for post in site.categories.CATEGORY %}
+  <article class="post">
+    <h2><a href="{{ site.baseurl }}{{ post.url }}"> {{ post.title | escape}} </a></h2>
+    {{ post.date | date_to_string }}
+    <p>{{ post.content | truncatewords: 5 }}</p>
+  </article>
+  {% endfor %}
 </div>
