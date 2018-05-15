@@ -1,0 +1,125 @@
+---
+layout: post 
+category: programmer
+---
+<div class = "post">
+		<h1 class = "postTitle">
+			来自：<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/zhaof/p/6281468.html">Django进阶之session</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><p>基于cookie做用户验证时：敏感信息不适合放在cookie中</p>
+<p>session依赖cookie</p>
+<h3>session原理</h3>
+<p>cookie是保存在用户浏览器端的键值对</p>
+<p>session是保存在服务器端的键值对</p>
+<p>&nbsp;</p>
+<p>session服务端中存在的数据为：</p>
+<div class="cnblogs_code">
+<pre>session =<span style="color: #000000;"> {
+
+   随机字符串1：{
+
+   用户1的相关信息
+
+}
+
+   随机字符串2：{
+
+   用户2的相关信息
+
+}
+
+}</span></pre>
+</div>
+<p>session客户端即客户端的浏览器的cookie中存的数据是当前用户对应的随机字符串</p>
+<h3>session的工作过程</h3>
+<p>1、&nbsp;&nbsp;&nbsp; 生成随机字符串</p>
+<p>2、&nbsp;&nbsp;&nbsp; 写到用户浏览器的cookie中</p>
+<p>3、&nbsp;&nbsp;&nbsp; 保存到session中</p>
+<p>4、&nbsp;&nbsp;&nbsp; 在随机字符串对应的字典中设置相关内容</p>
+<p>而上述过程在Django中的体现为：</p>
+<p>request.session["username"]=user</p>
+<p>这里的username为通过request.POST.get("username")从前端html页面中获取到的用户名信息</p>
+<p>注意：</p>
+<p>在Django中要用session中一定要先执行：</p>
+<p>python manage.py makemigrations</p>
+<p>python manage.py migrate</p>
+<p>&nbsp;</p>
+<p>当用户登录的时候的就会在数据库的django_session表中记录session信息</p>
+<p>&nbsp;</p>
+<p>同样的通过request.session["username"]也可以获取相应的值</p>
+<p>在这个过程中：</p>
+<p>1、&nbsp;&nbsp;&nbsp; 首先获取当前用户的随机字符串</p>
+<p>2、&nbsp;&nbsp;&nbsp; 根据随机字符串获取对应的内容</p>
+<p>&nbsp;</p>
+<h3>session的操作</h3>
+<p>&nbsp;</p>
+<p>request.session["k1"]&nbsp; 如果不存在则会报错</p>
+<p>request.session.get["k1"]，如果不存在则会报错，为了防止出错可以request.session.get('k1',none)</p>
+<p>&nbsp;</p>
+<p>request.session['k1'] = 123 设置session值</p>
+<p>request.session.setdefault('k1',123) &nbsp;存在则不设置</p>
+<p>del request.session['k1']&nbsp; 删除</p>
+<p>request.session.clear()&nbsp;&nbsp;&nbsp; 删除</p>
+<p>&nbsp;</p>
+<p>所有 键、值、键值对</p>
+<p>request.session.keys()</p>
+<p>request.session.values()</p>
+<p>request.session.items()</p>
+<p>request.session.iterkeys()</p>
+<p>request.session.itervalues()</p>
+<p>request.session.iteritems()</p>
+<p>&nbsp;</p>
+<p>用户session的随机字符串</p>
+<p>request.session.session_key</p>
+<p>&nbsp;</p>
+<p>将所有Session失效日期小于当前日期的数据删除</p>
+<p>request.session.clear_expired()</p>
+<p>&nbsp;</p>
+<p>检查 用户session的随机字符串 在数据库中是否</p>
+<p>request.session.exists("session_key")</p>
+<p>&nbsp;</p>
+<p>删除当前用户的所有Session数据</p>
+<p>request.session.delete("session_key")</p>
+<p>&nbsp;</p>
+<p>request.session.set_expiry(value)</p>
+<p>默认的过期时间是两周，如果自己设置了过期时间，这样自己设定的优先级就会高于默认的</p>
+<p>如果value是个整数，session会在些秒数后失效。</p>
+<p>如果value是个datatime或timedelta，session就会在这个时间后失效。</p>
+<p>如果value是0,用户关闭浏览器session就会失效。</p>
+<p>如果value是None,session会依赖全局session失效策略。</p>
+<p>&nbsp;</p>
+<p>配置setting.py</p>
+<p>SESSION_COOKIE_NAME ＝ "sessionid"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Session的cookie保存在浏览器上时的key，即：sessionid＝随机字符串（默认）</p>
+<p>SESSION_COOKIE_PATH ＝ "/"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;# Session的cookie保存的路径（默认）</p>
+<p>SESSION_COOKIE_DOMAIN = None&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Session的cookie保存的域名（默认）</p>
+<p>SESSION_COOKIE_SECURE = False&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 是否Https传输cookie（默认）</p>
+<p>SESSION_COOKIE_HTTPONLY = True&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 是否Session的cookie只支持http传输（默认）</p>
+<p>SESSION_COOKIE_AGE = 1209600&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # Session的cookie失效日期（2周）（默认）</p>
+<p>SESSION_EXPIRE_AT_BROWSER_CLOSE = False&nbsp;&nbsp;&nbsp; # 是否关闭浏览器使得Session过期（默认）</p>
+<p>SESSION_SAVE_EVERY_REQUEST = False&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; # 是否每次请求都保存Session，默认修改之后才保存（默认）</p>
+<p>&nbsp;</p>
+<h3>Django中对于session的存储方式</h3>
+<p>Django中支持session，其中内部提供了5种类型的session供开发者使用：</p>
+<p>数据库（默认）</p>
+<p>缓存</p>
+<p>文件</p>
+<p>缓存+数据库</p>
+<p>加密cookie</p>
+<p>1、如果是数据库，需要在settings.py中配置如下：</p>
+<p>SESSION_ENGINE = 'django.contrib.sessions.backends.db' （引擎（默认））</p>
+<p>2、如果是缓存session,需要在settings.py中配置如下：</p>
+<p>SESSION_ENGINE = 'django.contrib.sessions.backends.cache'（引擎）</p>
+<p>SESSION_CACHE_ALIAS= 'default' &nbsp;使用的缓存别名（默认内存缓存，也可以是memcache），此处别名依赖缓存的设置</p>
+<p>1、&nbsp;&nbsp;&nbsp; 如果是文件session, 需要在settings.py中配置如下：</p>
+<p>SESSION_ENGINE = 'django.contrib.sessions.backends.file' (引擎)</p>
+<p>SESSION_FILE_PATH=None&nbsp; 缓存文件路径，如果为None，则使用tempfile模块获取一个临时地址tempfile.gettempdir()&nbsp;&nbsp;&nbsp;</p>
+<p>2、&nbsp;&nbsp;&nbsp; 如果是缓存+数据库session，需要在settings.py中配置如下：</p>
+<p>SESSION_ENGINE='django.contrib.sessions.backends.cached_db'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （引擎）</p>
+<p>&nbsp;</p>
+</div>
+</div>
+</div>
+
+<p>{{ page.date | date_to_string }}</p>
