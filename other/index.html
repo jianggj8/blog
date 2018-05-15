@@ -14,8 +14,9 @@ active: index
   <span ><a href="/blog/other">其他</a></span>
 </div>
 
+
 <div class="posts">
-  {% for post in paginator.posts %}
+  {% for post in site.categories.other %}
   <article class="post">
     <h2><a href="{{ site.baseurl }}{{ post.url }}"> {{ post.title | escape}} </a></h2>
     {{ post.date | date_to_string }}
@@ -23,15 +24,3 @@ active: index
   </article>
   {% endfor %}
 </div>
-
-
-<!-- Pagination links -->
-<div class="pager">
-  {% if paginator.previous_page %}
-    <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="pre">Pre</a>
-  {% endif %}
-  {% if paginator.next_page %}
-    <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="next">Next</a>
-  {% endif %}
-</div>
-
