@@ -69,7 +69,8 @@ layout: post
 
 [Farbtle](https://github.com/YCF/Farbtle) from [YCF](https://github.com/YCF), I steal a lot from him.
 
-## é«˜äº®ä»£ç 
+## ¸ßÁÁ´úÂë
+
 {% highlight ruby linenos %}
 def show
   @widget = Widget(params[:id])
