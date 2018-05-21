@@ -6,14 +6,14 @@ active: index
 <div class="posts" >
   {% for post in paginator.posts %}
   <div id="Methods2">  
-  <dl>
+  <dd>
   <article class="post">
     <h2><a href="{{ site.baseurl }}{{ post.url }}"> {{ post.title | escape}} </a></h2>
     {{ post.date | date_to_string }}
 
     <p>{{ post.content | truncatewords: 5 }}</p>
   </article>
-  </dl></div>
+  </dd></div>
   {% endfor %}
 </div>
 
