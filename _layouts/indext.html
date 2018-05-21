@@ -3,7 +3,13 @@ layout: default
 ---
 <div id="banner" style="background-color:#BEBEBE;">
   <span >天行健地势坤★骤然临之而不惊，无故加之而不怒</span>&nbsp;&nbsp;&nbsp;&nbsp;
-  <span class="date">{{ site.time | date: "%b,%d %Y"  }}</span>
+  <span class="date">{{ site.time | date: "%b,%d %Y"  }}
+  	    <time class="post-time" itemprop="dateCreated"
+              datetime="{{ post.date | date_to_xmlschema }}"
+              content="{{ post.date | date: site.date_format }}" >
+          {{ post.date | date: '%Y-%m-%d' }}
+        </time>
+  	</span>
   <span class="sub_info"> today </span>
 <br />
   <span ><a href="/blog/life">生活</a></span>&nbsp;&nbsp;&nbsp;&nbsp;
