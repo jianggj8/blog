@@ -10,7 +10,7 @@ active: index
     <time class="post-time" itemprop="dateCreated"
               datetime="{{ post.date | date_to_xmlschema }}"
               content="{{ post.date | date: site.date_format }}" >
-          {{ post.date | date: '%m-%d' }}
+          {{ post.date | date: '%y-%m-%d' }}
         </time>
     <p>{{ post.content | truncatewords: 5 }}</p>
   </article>
