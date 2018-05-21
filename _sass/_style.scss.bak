@@ -354,10 +354,3 @@ main {
         padding: 40px 15px;
     }
   }
-
-
-#Methods2{ width:900px; background:#ccc;}  
-#Methods2 dl{width:860px; height:200px; margin:20px; background:red;}  
-#Methods2 dt{width:180px; height:180px; float:left; margin:10px; background:#FFF;}  
-#Methods2 dd{width:610px; height:160px; float:left; margin:10px 10px 10px 0; padding:10px 20px; line-height:20px; background:#FFFFFF; text-align:left;}  
-.More{ position:absolute; right:120px; margin-top:10px;}  
