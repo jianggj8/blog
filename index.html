@@ -7,6 +7,11 @@ active: index
   <article class="post">
     <h2><a href="{{ site.baseurl }}{{ post.url }}"> {{ post.title | escape}} </a></h2>
     {{ post.date | date_to_string }}
+    <time class="post-time" itemprop="dateCreated"
+              datetime="{{ post.date | date_to_xmlschema }}"
+              content="{{ post.date | date: site.date_format }}" >
+          {{ post.date | date: '%m-%d' }}
+        </time>
     <p>{{ post.content | truncatewords: 5 }}</p>
   </article>
   {% endfor %}
@@ -23,8 +28,3 @@ active: index
   {% endif %}
 </div>
 
-<time class="post-time" itemprop="dateCreated"
-              datetime="{{ post.date | date_to_xmlschema }}"
-              content="{{ post.date | date: site.date_format }}" >
-          {{ post.date | date: '%m-%d' }}
-        </time>
