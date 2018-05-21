@@ -3,9 +3,9 @@ layout: indext
 active: index
 ---
 
-<div class="posts" style="background-color:#FFFAFA;">
+<div class="posts" >
   {% for post in paginator.posts %}
-  <article class="post-expand post" itemprop="articleBody">
+  <article class="post-expand post" itemprop="articleBody" style="background-color:#FFFAFA;">
     <h2><a href="{{ site.baseurl }}{{ post.url }}"> {{ post.title | escape}} </a></h2>
     {{ post.date | date_to_string }}
 
