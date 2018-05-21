@@ -2,10 +2,10 @@
 layout: indext
 active: index
 ---
-<article class="post-expand post" itemprop="articleBody"> 
+
 <div class="posts">
   {% for post in paginator.posts %}
-  <article class="post">
+  <article class="post-expand post" itemprop="articleBody">
     <h2><a href="{{ site.baseurl }}{{ post.url }}"> {{ post.title | escape}} </a></h2>
     {{ post.date | date_to_string }}
 
@@ -13,7 +13,7 @@ active: index
   </article>
   {% endfor %}
 </div>
-  </article>
+
 
 <!-- Pagination links -->
 <div class="pager">
