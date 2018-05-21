@@ -3,7 +3,7 @@ layout: indext
 active: index
 ---
 
-<div class="posts">
+<div class="posts" style="background-color:#FFFAFA;">
   {% for post in paginator.posts %}
   <article class="post-expand post" itemprop="articleBody">
     <h2><a href="{{ site.baseurl }}{{ post.url }}"> {{ post.title | escape}} </a></h2>
