@@ -12,11 +12,7 @@ active: index
   {% endfor %}
 </div>
 
-<time class="post-time" itemprop="dateCreated"
-              datetime="{{ post.date | date_to_xmlschema }}"
-              content="{{ post.date | date: site.date_format }}" >
-          {{ post.date | date: '%m-%d' }}
-        </time>
+
 <!-- Pagination links -->
 <div class="pager">
   {% if paginator.previous_page %}
@@ -27,3 +23,8 @@ active: index
   {% endif %}
 </div>
 
+<time class="post-time" itemprop="dateCreated"
+              datetime="{{ post.date | date_to_xmlschema }}"
+              content="{{ post.date | date: site.date_format }}" >
+          {{ post.date | date: '%m-%d' }}
+        </time>
