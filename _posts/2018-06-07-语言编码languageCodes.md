@@ -6,10 +6,10 @@ category: programmer
 <p>Table 1. Language Codes</p>
 </blockquote>
 
-    | Language | Code |
-    | :----: | :-----: | -----: |
-    |  Abkhazian | AB | 
-    |  Afar | AA | 
+| Language | Code |
+| :----: | :-----: | -----: |
+|  Abkhazian | AB | 
+|  Afar | AA | 
     |  Afrikaans | AF | 
     |  Albanian | SQ | 
     |  Amharic | AM | 
